@@ -15,6 +15,5 @@ while read -r line; do
   uniq -d
 done < input.txt | \
 xargs -n1 -I% sh -c 'echo $alpha_%' | \
-tr $'\n' '+' | \
-sed 's/\+$//' | \
+paste -sd+ - | \
 bc
