@@ -9,8 +9,6 @@ while read -r line; do
   if (( first_start >= second_start && first_end <= second_end )) || \
      (( second_start >= first_start && second_end <= first_end )); then
     echo 1
-  else
-    echo 0
   fi
 done < input.txt | \
 paste -sd+ - | \
